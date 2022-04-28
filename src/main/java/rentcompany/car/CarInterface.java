@@ -2,7 +2,7 @@ package rentcompany.car;
 
 public interface CarInterface {
 
-    public double getChargeQuantity();
+    double getChargeQuantity();
 
-    public abstract String getName();
+    String getName();
 }

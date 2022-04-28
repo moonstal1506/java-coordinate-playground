@@ -3,10 +3,10 @@ package rentcompany.car;
 public class Avante extends Car {
 
     private final String name;
-    private static final double distancePerLiter = 15;
+    private static final double DISTANCE_PER_LITER = 15;
 
     public Avante(int tripDistance) {
-        super(tripDistance, distancePerLiter);
+        super(tripDistance, DISTANCE_PER_LITER);
         this.name = "Avante";
     }
 
