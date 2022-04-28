@@ -5,6 +5,10 @@ import coordinate.view.InputView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
+
+import static java.util.stream.Collectors.toSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,7 +31,31 @@ public class Main {
             double distance = Math.sqrt(Math.pow(a.getX() - b.getX(), 2) +
                     (Math.pow(a.getY() - b.getY(), 2)));
 
-            System.out.println("두점사이의 거리는"+distance);
+            System.out.println("두점사이의 거리는" + distance);
         }
+
+
+        if (points.size() == 4) {
+            Set<Integer> xSet = getSet(points,Point::getX);
+            Set<Integer> ySet = getSet(points,Point::getY);
+
+            if(!(xSet.size()==2&&ySet.size()==2)){
+                throw new IllegalArgumentException("직사각형 아님");
+            }
+
+            int areaSize=calculateDistance(xSet)*calculateDistance(ySet);
+            System.out.println("사각형 넓이는 " + areaSize);
+        }
+    }
+
+    private static Set<Integer> getSet(List<Point> points, Function<Point, Integer> function) {
+        return points.stream()
+                .map(function)
+                .collect(toSet());
+    }
+
+    private static int calculateDistance(Set<Integer> set){
+        List<Integer> list = new ArrayList<>(set);
+        return Math.abs(list.get(0)-list.get(1));
     }
 }
