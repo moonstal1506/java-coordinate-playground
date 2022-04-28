@@ -1,6 +1,9 @@
 package rentcompany;
 
 import org.junit.jupiter.api.Test;
+import rentcompany.car.Avante;
+import rentcompany.car.K5;
+import rentcompany.car.Sonata;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
