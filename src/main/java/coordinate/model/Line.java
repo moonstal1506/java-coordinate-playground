@@ -3,28 +3,17 @@ package coordinate.model;
 import java.util.List;
 import java.util.Objects;
 
-public class Line {
+public class Line extends Figure{
 
-    List<Point> points;
+    public static final int POINTS_SIZE_OF_LINE = 2;
 
     public Line(List<Point> points) {
-        this.points = points;
+        super.points = points;
     }
 
+    @Override
     public double area(){
         return points.get(0).calculateDistance(points.get(1));
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Line line = (Line) o;
-        return Objects.equals(points, line.points);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(points);
-    }
 }

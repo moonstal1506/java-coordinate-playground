@@ -1,5 +1,7 @@
 package coordinate.view;
 
+import coordinate.model.Figure;
+import coordinate.model.FigureFactory;
 import coordinate.model.Line;
 import coordinate.model.Point;
 import org.junit.jupiter.api.BeforeEach;

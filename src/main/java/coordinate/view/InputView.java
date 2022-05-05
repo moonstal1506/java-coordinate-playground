@@ -1,5 +1,7 @@
 package coordinate.view;
 
+import coordinate.model.Figure;
+import coordinate.model.FigureFactory;
 import coordinate.model.Line;
 import coordinate.model.Point;
 
@@ -14,19 +16,21 @@ public class InputView {
     private static final String INPUT_MESSAGE = "좌표를 입력하세요.";
     static Scanner scanner = new Scanner(System.in);
 
-    public static Line input(){
+    public static Figure input(){
         System.out.println(INPUT_MESSAGE);
         return input(scanner.nextLine());
     }
 
-    public static Line input(String value){
+    public static Figure input(String value){
         try {
-            return new Line(createPoints(value));
+            return new FigureFactory().create(createPoints(value));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return input();
         }
     }
+
+
 
     private static List<Point> createPoints(String value) {
         List<Point> points = new ArrayList<>();
