@@ -26,6 +26,23 @@ public class Point {
         return number < MIN || number > MAX;
     }
 
+    public double calculateDistance(Point point) {
+        return Math.sqrt(subtractAndPow(point.getX(), this.x) + subtractAndPow(point.getY(), this.y));
+    }
+
+    private double subtractAndPow(int firstNumber, int secondNumber) {
+        return Math.pow(firstNumber - secondNumber, 2);
+    }
+
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

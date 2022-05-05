@@ -3,6 +3,7 @@ package coordinate.model;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PointTest {
@@ -22,5 +23,13 @@ class PointTest {
         assertThrows(IllegalArgumentException.class, ()->{
             new Point(25,24);
         });
+    }
+
+    @Test
+    void 거리계산() {
+        Point point = new Point(10,10);
+
+        assertThat(point.calculateDistance(new Point(14,15)))
+                .isEqualTo(6.403, offset(0.00099));
     }
 }
