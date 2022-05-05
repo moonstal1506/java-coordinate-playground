@@ -7,6 +7,7 @@ import coordinate.model.Point;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,16 +17,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InputViewTest {
 
-    private Line line;
+    private List<Point> points;
 
     @BeforeEach
     void setUp() {
-        List<Point> points = Arrays.asList(new Point(10,10), new Point(14,15));
-        line = new Line(points);
+        points = new ArrayList<>();
     }
 
     @Test
     void 선_생성() {
+        points.add(new Point(10,10));
+        points.add(new Point(14,15));
+        Line line = new Line(points);
         assertThat(InputView.input("(10,10)-(14,15)"))
                 .isEqualTo(line);
     }

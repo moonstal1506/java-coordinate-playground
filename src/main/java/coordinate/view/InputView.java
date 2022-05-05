@@ -30,8 +30,6 @@ public class InputView {
         }
     }
 
-
-
     private static List<Point> createPoints(String value) {
         List<Point> points = new ArrayList<>();
         for (String StringPoint : splitPoints(value)) {

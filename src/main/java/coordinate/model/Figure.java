@@ -9,6 +9,8 @@ public abstract class Figure {
 
     public abstract double area();
 
+    public abstract String reportArea();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
