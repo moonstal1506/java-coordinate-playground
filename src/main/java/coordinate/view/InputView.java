@@ -20,7 +20,12 @@ public class InputView {
     }
 
     public static Line input(String value){
-        return new Line(createPoints(value));
+        try {
+            return new Line(createPoints(value));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return input();
+        }
     }
 
     private static List<Point> createPoints(String value) {

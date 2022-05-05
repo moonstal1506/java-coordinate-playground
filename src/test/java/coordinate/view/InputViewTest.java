@@ -26,6 +26,6 @@ class InputViewTest {
     void 선_생성() {
         assertThat(InputView.input("(10,10)-(14,15)"))
                 .isEqualTo(line);
-        ;
     }
+
 }
