@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RectangleTest {
@@ -27,5 +28,16 @@ class RectangleTest {
         assertThrows(IllegalArgumentException.class, ()->{
             new Rectangle(points);
         });
+    }
+
+    @Test
+    void 직사각형_넓이계산() {
+        points.add(new Point(10,10));
+        points.add(new Point(22,10));
+        points.add(new Point(22,18));
+        points.add(new Point(10,18));
+        Rectangle rectangle = new Rectangle(points);
+        assertThat(rectangle.area())
+                .isEqualTo(96);
     }
 }
