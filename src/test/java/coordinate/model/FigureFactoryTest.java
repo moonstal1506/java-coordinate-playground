@@ -26,4 +26,13 @@ class FigureFactoryTest {
         points.add(new Point(14,15));
         assertThat(FigureFactory.create(points)).isEqualTo(new Line(points));
     }
+
+    @Test
+    void 직사각형_생성() {
+        points.add(new Point(10,10));
+        points.add(new Point(22,10));
+        points.add(new Point(22,18));
+        points.add(new Point(10,18));
+        assertThat(FigureFactory.create(points)).isEqualTo(new Rectangle(points));
+    }
 }

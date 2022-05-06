@@ -9,6 +9,7 @@ import static java.util.stream.Collectors.toSet;
 
 public class Rectangle extends Figure{
 
+    public static final int POINTS_SIZE_OF_RECTANGLE = 4;
     private static final int SET_SIZE = 2;
 
     public Rectangle(List<Point> points) {
