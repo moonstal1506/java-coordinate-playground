@@ -1,9 +1,6 @@
 package coordinate.view;
 
-import coordinate.model.Figure;
-import coordinate.model.FigureFactory;
-import coordinate.model.Line;
-import coordinate.model.Point;
+import coordinate.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,4 +30,14 @@ class InputViewTest {
                 .isEqualTo(line);
     }
 
+    @Test
+    void 사각형_생성() {
+        points.add(new Point(10,10));
+        points.add(new Point(22,10));
+        points.add(new Point(22,18));
+        points.add(new Point(10,18));
+        Rectangle rectangle = new Rectangle(points);
+        assertThat(InputView.input("(10,10)-(22,10)-(22,18)-(10,18)"))
+                .isEqualTo(rectangle);
+    }
 }
