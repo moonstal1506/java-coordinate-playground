@@ -17,8 +17,8 @@ public class Rectangle extends Figure {
     private Set<Integer> ySet;
 
     public Rectangle(List<Point> points) {
+        super(points);
         checkRectangle(points);
-        super.points = points;
     }
 
     private void checkRectangle(List<Point> points) {

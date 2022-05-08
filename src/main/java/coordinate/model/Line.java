@@ -9,11 +9,12 @@ public class Line extends Figure{
     private static final String AREA_OF_LINE = "두 점 사이의 거리는 ";
 
     public Line(List<Point> points) {
-        super.points = points;
+        super(points);
     }
 
     @Override
     public double area(){
+        List<Point> points = getPoints();
         return points.get(0).calculateDistance(points.get(1));
     }
 

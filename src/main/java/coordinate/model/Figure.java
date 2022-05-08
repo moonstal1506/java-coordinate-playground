@@ -5,11 +5,19 @@ import java.util.Objects;
 
 public abstract class Figure {
 
-    List<Point> points;
+    private List<Point> points;
+
+    public Figure(List<Point> points) {
+        this.points = points;
+    }
 
     public abstract double area();
 
     public abstract String reportArea();
+
+    public List<Point> getPoints() {
+        return points;
+    }
 
     @Override
     public boolean equals(Object o) {
