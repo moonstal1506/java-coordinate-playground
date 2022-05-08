@@ -12,7 +12,7 @@ public class Rectangle extends Figure {
 
     public static final int POINTS_SIZE_OF_RECTANGLE = 4;
     private static final int SET_SIZE = 2;
-    private static final String AREA_OF_LINE = "사각형 넓이는 ";
+    private static final String AREA_OF_RECTANGLE = "사각형 넓이는 ";
     private Set<Integer> xSet;
     private Set<Integer> ySet;
 
@@ -50,6 +50,6 @@ public class Rectangle extends Figure {
 
     @Override
     public String reportArea() {
-        return AREA_OF_LINE + area();
+        return AREA_OF_RECTANGLE + area();
     }
 }

@@ -35,4 +35,12 @@ class FigureFactoryTest {
         points.add(new Point(10,18));
         assertThat(FigureFactory.create(points)).isEqualTo(new Rectangle(points));
     }
+
+    @Test
+    void 삼각형_생성() {
+        points.add(new Point(10,10));
+        points.add(new Point(14,15));
+        points.add(new Point(20,8));
+        assertThat(FigureFactory.create(points)).isEqualTo(new Triangle(points));
+    }
 }

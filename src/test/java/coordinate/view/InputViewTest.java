@@ -40,4 +40,14 @@ class InputViewTest {
         assertThat(InputView.input("(10,10)-(22,10)-(22,18)-(10,18)"))
                 .isEqualTo(rectangle);
     }
+
+    @Test
+    void 삼각형_생성() {
+        points.add(new Point(10,10));
+        points.add(new Point(14,15));
+        points.add(new Point(20,8));
+        Triangle triangle = new Triangle(points);
+        assertThat(InputView.input("(10,10)-(14,15)-(20,8)"))
+                .isEqualTo(triangle);
+    }
 }
